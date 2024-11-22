@@ -1,4 +1,4 @@
-% Facts: Define the grid and obstacles
+
 grid_size(4, 4). % A 4x4 grid
 obstacle(2, 2). % There's an obstacle at (2, 2)
 
@@ -16,8 +16,7 @@ means_end(Start, Goal, Path) :-
     means_end_helper(Start, Goal, [Start], Path).
 
 means_end_helper(Goal, Goal, Visited, Path) :-
-    reverse(Visited, Path). % If the goal is reached, return the path.
-
+    reverse(Visited, Path). 
 means_end_helper(Current, Goal, Visited, Path) :-
     move(Direction, Current, Next), % Attempt a move.
     valid_position(Next),          % Ensure it's a valid position.
